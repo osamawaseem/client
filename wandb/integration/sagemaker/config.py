@@ -23,7 +23,7 @@ def parse_sm_config():
             cast = v.strip('"')
             if re.match(r"^[-\d]+$", cast):
                 cast = int(cast)
-            elif re.match(r"^[-.\d]+$", cast):
+            elif re.match(r"^[+-]?[0-9]+[\.]{0,1}?[0-9]+$", cast):
                 cast = float(cast)
             conf[k] = cast
     return conf
